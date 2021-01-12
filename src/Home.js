@@ -7,11 +7,19 @@ const Home = () => {
        {title: 'Welcome home', body:'site with react;;;;', author:'Marie', id:'15'},
        {title: 'Welcome you', body:'site with react;;;;', author:'Monia', id:'16'},
     ]);
+
+    const handleDelete = (id) =>{
+        const newBlogs = blogs.filter(blog => blog.id !== id);
+        setBlogs(newBlogs)
+    }
+    
     
 
     return ( 
         <div className="home">
-            <BlogList blogs = {blogs}/>
+            <BlogList blogs = {blogs} title="Marie's blogs" handleDelete={handleDelete} />
+
+             
         </div>
             
 
